@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSP is handled dynamically or omitted to allow VSCode specific fonts -->
+    <title>Live Architecture Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="toolbar">
+        <div class="filter-group">
+            <label><input type="checkbox" id="filter-route" checked> Routes</label>
+            <label><input type="checkbox" id="filter-controller" checked> Controllers</label>
+            <label><input type="checkbox" id="filter-service" checked> Services</label>
+            <label><input type="checkbox" id="filter-model" checked> Models</label>
+            <label><input type="checkbox" id="filter-middleware" checked> Middlewares</label>
+        </div>
+        <div class="actions">
+            <input type="text" id="search-box" placeholder="Fuzzy search nodes...">
+            <button id="btn-toggle-view">View Data Table</button>
+            <button id="btn-export-png">Export PNG</button>
+            <button id="btn-export-json">Export JSON</button>
+        </div>
+    </div>
+
+    <div id="cy"></div>
+    <div id="table-view" class="hidden">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>Type</th>
+                    <th>Lines</th>
+                    <th>Complexity</th>
+                    <th>Circular?</th>
+                    <th>Unused?</th>
+                </tr>
+            </thead>
+            <tbody id="data-table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <div id="tooltip" class="hidden"></div>
+    <div id="explanation-card" class="hidden">
+        <div class="card-header">
+            <h3>AI Explanation</h3>
+            <button id="close-explanation">✕</button>
+        </div>
+        <div id="explanation-content"></div>
+    </div>
+
+    <!-- The actual script is replaced by WebviewProvider -->
+    <script src="visualizer.js"></script>
+</body>
+
+</html>

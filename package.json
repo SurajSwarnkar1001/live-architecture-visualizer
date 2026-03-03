@@ -1,0 +1,130 @@
+{
+  "name": "live-architecture-visualizer",
+  "displayName": "Live Architecture Visualizer",
+  "description": "Scan any Node.js/Express/MongoDB workspace and render a LIVE, interactive architecture diagram inside a VS Code Webview. Updates in real-time as files change.",
+  "version": "1.0.0",
+  "publisher": "YOUR_PUBLISHER_ID",
+  "icon": "logo.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/live-architecture-visualizer"
+  },
+  "keywords": [
+    "architecture",
+    "diagram",
+    "visualizer",
+    "nodejs",
+    "express",
+    "mongodb",
+    "dependency",
+    "graph"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "liveArchViz.open",
+        "title": "Open Architecture Visualizer",
+        "category": "Live Arch Viz",
+        "icon": "$(type-hierarchy)"
+      },
+      {
+        "command": "liveArchViz.refresh",
+        "title": "Refresh Architecture",
+        "category": "Live Arch Viz",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "liveArchViz.open",
+          "group": "navigation@1",
+          "when": "explorerViewletFocus"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "liveArchViz.open",
+          "group": "navigation@99"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "liveArchViz.open",
+          "group": "navigation",
+          "when": "resourceLangId == javascript || resourceLangId == typescript"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "liveArchViz.open"
+        },
+        {
+          "command": "liveArchViz.refresh"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Live Architecture Visualizer",
+      "properties": {
+        "liveArchViz.exclude": {
+          "type": "array",
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/coverage/**"
+          ],
+          "description": "Glob patterns to exclude from scanning."
+        },
+        "liveArchViz.maxFileSizeKb": {
+          "type": "number",
+          "default": 1000,
+          "description": "Maximum file size to scan (in KB)."
+        },
+        "liveArchViz.enableAI": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable AI Node Explainer using VS Code Language Model API."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "@babel/types": "^7.23.0",
+    "cytoscape": "^3.28.0",
+    "cytoscape-dagre": "^2.5.0",
+    "glob": "^10.3.0"
+  },
+  "devDependencies": {
+    "@types/babel__traverse": "^7.20.5",
+    "@types/cytoscape": "^3.19.16",
+    "@types/cytoscape-dagre": "^2.3.3",
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
