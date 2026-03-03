@@ -3,12 +3,12 @@
   "displayName": "Live Architecture Visualizer",
   "description": "Scan any Node.js/Express/MongoDB workspace and render a LIVE, interactive architecture diagram inside a VS Code Webview. Updates in real-time as files change.",
   "version": "1.0.0",
-  "publisher": "YOUR_PUBLISHER_ID",
+  "publisher": "surajswarnkar20011118",
   "icon": "logo.png",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/live-architecture-visualizer"
+    "url": "https://github.com/SurajSwarnkar1001/live-architecture-visualizer"
   },
   "keywords": [
     "architecture",

@@ -2,7 +2,7 @@
 
 **Scan any Node.js / Express / MongoDB workspace and render a LIVE, interactive architecture diagram inside VS Code — updating in real-time as files change.**
 
-[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/YOUR_PUBLISHER_ID.live-architecture-visualizer?color=blue&label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=YOUR_PUBLISHER_ID.live-architecture-visualizer)
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/surajswarnkar20011118.live-architecture-visualizer?color=blue&label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=surajswarnkar20011118.live-architecture-visualizer)
 
 ---
 
